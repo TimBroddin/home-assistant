@@ -1,0 +1,23 @@
+icon: "mdi:washing-machine"
+path: huishouden
+title: Huishouden
+badges: []
+cards:
+  - type: vertical-stack
+    cards:
+      - type: glance
+        entities:
+          - entity: switch.wasmachine_power
+          - entity: binary_sensor.wasmachine_door
+          - entity: sensor.wasmachine_remaining_program_time
+      - entity: sensor.wasmachine_program_progress
+        max: 100
+        min: 0
+        type: gauge
+      - type: glance
+        entities:
+          - entity: sensor.canon_mg5300_series_black_bk
+          - entity: sensor.canon_mg5300_series_black_pgbk
+          - entity: sensor.canon_mg5300_series_cyan
+          - entity: sensor.canon_mg5300_series_magenta
+          - entity: sensor.canon_mg5300_series_yellow

@@ -1,0 +1,132 @@
+icon: "mdi:lightbulb"
+path: lichten
+title: Lichten
+panel: true
+badges: []
+cards:
+  - type: "custom:layout-card"
+    layout: vertical
+    min_columns: 8
+    max_width: 1200px
+    cards:
+      - type: "horizontal-stack"
+        title: WLED
+        layout: horizontal
+        max_columns: 2
+        cards:
+          - shorten_cards: false
+            consolidate_entities: false
+            color_wheel: true
+            persist_features: false
+            brightness: true
+            color_temp: true
+            white_value: true
+            color_picker: true
+            smooth_color_wheel: false
+            hide_header: false
+            child_card: false
+            show_slider_percent: false
+            full_width_sliders: false
+            brightness_icon: weather-sunny
+            white_icon: file-word-box
+            temperature_icon: thermometer
+            type: "custom:light-entity-card"
+            header: Floor & Minne (bollen)
+            entity: light.floor_minne_segment_0
+          - shorten_cards: false
+            consolidate_entities: false
+            color_wheel: true
+            persist_features: false
+            brightness: true
+            color_temp: true
+            white_value: true
+            color_picker: true
+            smooth_color_wheel: false
+            hide_header: false
+            child_card: false
+            show_slider_percent: false
+            full_width_sliders: false
+            brightness_icon: weather-sunny
+            white_icon: file-word-box
+            temperature_icon: thermometer
+            type: "custom:light-entity-card"
+            header: Floor_minne_segment_1
+            entity: light.floor_minne_segment_1
+      - type: "horizontal-stack"
+        layout: horizontal
+        max_columns: 2
+        cards:
+          - shorten_cards: false
+            consolidate_entities: false
+            color_wheel: true
+            persist_features: false
+            brightness: true
+            color_temp: true
+            white_value: true
+            color_picker: true
+            smooth_color_wheel: false
+            hide_header: false
+            child_card: false
+            show_slider_percent: false
+            full_width_sliders: false
+            brightness_icon: weather-sunny
+            white_icon: file-word-box
+            temperature_icon: thermometer
+            type: "custom:light-entity-card"
+            header: Floor_minne_nightlight
+            entity: light.wled
+          - shorten_cards: false
+            consolidate_entities: false
+            color_wheel: true
+            persist_features: false
+            brightness: true
+            color_temp: true
+            white_value: true
+            color_picker: true
+            smooth_color_wheel: false
+            hide_header: false
+            child_card: false
+            show_slider_percent: false
+            full_width_sliders: false
+            brightness_icon: weather-sunny
+            white_icon: file-word-box
+            temperature_icon: thermometer
+            type: "custom:light-entity-card"
+            header: Janne gang
+            entity: light.wled_2
+      - type: "horizontal-stack"
+        title: "WLED Verbruik"
+        cards:
+          - type: sensor
+            entity: sensor.wled_estimated_current
+            graph: line
+          - type: sensor
+            entity: sensor.floor_minne_estimated_current
+            graph: line
+          - type: sensor
+            entity: sensor.wled_estimated_current_2
+            graph: line
+      - type: "horizontal-stack"
+        title: "Philips Hue"
+        cards:
+          - type: entities
+            entities:
+              - light.bloom
+              - light.bol
+              - light.hue_color_lamp_1
+              - light.hue_white_lamp_1
+              - light.hue_white_lamp_2
+              - light.lightstrips_1
+              - light.livingcolor
+              - light.muur
+              - light.nachtkastje
+          - type: entities
+            entities:
+              - light.raam
+              - light.zolder
+              - light.hue_color_spot_4
+              - light.hue_color_spot_5
+              - light.hue_color_spot_6
+              - light.hue_color_spot_2
+              - light.hue_color_spot_1
+              - light.hue_color_spot_3

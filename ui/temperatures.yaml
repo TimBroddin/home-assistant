@@ -1,0 +1,94 @@
+title: Home
+icon: "mdi:coolant-temperature"
+path: home
+title: Home
+badges: []
+panel: true
+cards:
+  - type: 'custom:layout-card'  
+    layout: vertical
+    cards:
+      - type:  vertical-stack
+        title: Weer
+        cards: 
+          - entity: weather.huis
+            name: Weer
+            type: weather-forecast
+          - type: horizontal-stack
+            title: Systeem
+            cards:
+              - type: gauge
+                entity: sensor.processor_use_percent
+                min: 0
+                max: 100
+                name: "CPU %"
+              - type: "custom:mini-graph-card"
+                entities:
+                  - sensor.disk_free_home
+                name: SD-kaart
+              - type: "custom:mini-graph-card"
+                entities:
+                  - sensor.memory_free
+                name: Geheugen vrij
+      - type: vertical-stack
+        title: Gang
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: "custom:mini-graph-card"
+                entities:
+                  - sensor.gang_beneden_sensor_temperature
+                name: Beneden
+              - type: "custom:mini-graph-card"
+                entities:
+                  - sensor.gang_sensor_temperature
+                name: Badkamer
+              - type: "custom:mini-graph-card"
+                entities:
+                  - sensor.hue_motion_sensor_zolder_temperature
+                name: Zolder
+          - type: horizontal-stack
+            cards: 
+              - type: "custom:mini-graph-card"
+                entities:
+                  - entity: sensor.gang_beneden_sensor_light_level
+                    name: Beneden
+                  - entity: sensor.gang_sensor_light_level
+                    name: Badkamer
+                  - entity: sensor.hue_motion_sensor_zolder_light_level
+                    name: Zolder
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            title: "Kelder"
+            cards: 
+              - type: sensor
+                entity: sensor.kelder_temperature
+                graph: line
+                hours_to_show: 24
+              - type: sensor
+                entity: sensor.kelder_humidity
+                graph: line
+                hours_to_show: 24
+          - type: horizontal-stack
+            title: "Serverkast"
+            cards:
+              - type: sensor 
+                entity: sensor.serverkast_temperature
+                graph: line
+                hours_to_show: 24
+              - type: sensor
+                entity: sensor.serverkast_humidity
+                graph: line
+                hours_to_show: 24
+          - type: horizontal-stack
+            title: "Zolder"
+            cards:
+              - type: sensor 
+                entity: sensor.zolder_temperature
+                graph: line
+                hours_to_show: 24
+              - type: sensor
+                entity: sensor.zolder_humidity
+                graph: line
+                hours_to_show: 24   

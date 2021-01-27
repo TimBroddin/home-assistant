@@ -1,0 +1,53 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+sensor: !include sensor.yaml
+switch: !include switches.yaml
+lovelace:
+  mode: yaml
+  resources:
+    - url: /local/community/lovelace-layout-card/layout-card.js
+      type: module
+    - url: "/local/community/mini-graph-card/mini-graph-card-bundle.js"
+      type: module
+    - url: https://fonts.googleapis.com/css?family=Comfortaa&display=swap
+      type: css
+    - url: /local/community/light-entity-card/light-entity-card.js
+      type: module
+frontend:
+  themes: !include_dir_merge_named themes
+
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: homeassistant
+  username: homeassistant
+  password: homeassistant
+  max_retries: 3
+  default_measurement: state
+
+volkswagencarnet:
+  username: !secret carnet_username
+  password: !secret carnet_password
+  spin: 0753
+  scandinavian_miles: false
+  scan_interval:
+    minutes: 2
+  name:
+    wvgzzz1tzkw065161: Touran
+
+home_connect:
+  client_id: !secret homeconnect_client_id
+  client_secret: !secret home_connect_client_secret
+
+eufy:
+  username: !secret eufy_username
+  password: !sectret eufy_password

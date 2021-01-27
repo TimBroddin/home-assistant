@@ -1,0 +1,166 @@
+- id: notify_volkswagen_position_change
+  description: Notify when position has been changed
+  alias: VW position changed notification
+  trigger:
+    - platform: state
+      entity_id: device_tracker.touran
+  action:
+    - service: notify.mobile_app_iphone_van_tim
+      data_template:
+        title: Touran positie geupdate
+        message: 🚗 Touran heeft bewogen!
+        data:
+          url: /lovelace/touran
+          apns_headers:
+            apns-collapse-id:
+              car_position_state_{{ trigger.entity_id.split(".")[1]
+              }}
+          push:
+            category: map
+            thread-id: HA Car Status
+          action_data:
+            latitude: "{{trigger.from_state.attributes.latitude}}"
+            longitude: "{{trigger.from_state.attributes.longitude}}"
+            second_latitude: "{{trigger.to_state.attributes.latitude}}"
+            second_longitude: "{{trigger.to_state.attributes.longitude}}"
+            shows_traffic: true
+- id: notify_volkswagen_car_is_unlocked
+  alias: VW is at home and unlocked
+  trigger:
+    - minutes: /10
+      platform: time_pattern
+  condition:
+    - condition: state
+      entity_id: lock.touran_door_locked
+      state: unlocked
+  action:
+    - service: notify.mobile_app_iphone_van_tim
+      data:
+        message: Touran is niet op slot!
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.woonkamer
+        volume_level: "0.6"
+    - service: tts.google_translate_say
+      data:
+        entity_id: media_player.woonkamer
+        language: nl
+        message: De auto is niet op slot!
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.sonos
+        volume_level: "0.6"
+    - service: tts.google_translate_say
+      data:
+        entity_id: media_player.sonos
+        language: nl
+        message: De auto is niet op slot!
+- id: notify_when_washing_machine_is_done
+  alias: Wasmachine klaar
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.wasmachine_program_progress
+      above: 97
+      below: 101
+      for: 00:00:05
+  action:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.woonkamer
+        volume_level: "0.6"
+    - service: tts.google_translate_say
+      data:
+        entity_id: media_player.woonkamer
+        language: nl
+        message: De was is klaar.
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.sonos
+        volume_level: "0.6"
+    - service: tts.google_translate_say
+      data:
+        entity_id: media_player.sonos
+        language: nl
+        message: De was is klaar!
+- id: notify_when_stromer_is_charged
+  alias: Stromer opgeladen
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.stromer_battery_chargelevel
+      above: 99
+      below: "101"
+      for: 00:00:05
+  action:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.woonkamer
+        volume_level: "0.6"
+    - service: tts.google_translate_say
+      data:
+        entity_id: media_player.woonkamer
+        language: nl
+        message: "De Stromer is opgeladen. Ik herhaal: je fiets is opgeladen!"
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.sonos
+        volume_level: "0.6"
+    - service: tts.google_translate_say
+      data:
+        entity_id: media_player.sonos
+        language: nl
+        message: "De Stromer is opgeladen. Ik herhaal: je fiets is opgeladen!"
+    - service: notify.mobile_app_iphone_van_tim
+      data:
+        message: Stromer is volledig opgeladen.
+  mode: single
+- id: notify_when_stromer_is_depleted
+  alias: Stromer leeg
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.stromer_battery_chargelevel
+      below: 10
+      for: 00:00:05
+  action:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.woonkamer
+        volume_level: "0.6"
+    - service: tts.google_translate_say
+      data:
+        entity_id: media_player.woonkamer
+        language: nl
+        message: "De Stromer is bijna leeg. Ik herhaal: je fiets is bijna leeg."
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.sonos
+        volume_level: "0.6"
+    - service: tts.google_translate_say
+      data:
+        entity_id: media_player.sonos
+        language: nl
+        message: "De Stromer is bijna leeg. Ik herhaal: je fiets is bijna leeg."
+    - service: notify.mobile_app_iphone_van_tim
+      data:
+        message: Stromer is plat.
+- id: "1611242349910"
+  alias: Janne LEDS aan
+  description: ""
+  trigger:
+    - type: motion
+      platform: device
+      device_id: 217e4635d2173b10572f283f45d3793d
+      entity_id: binary_sensor.pir_sensor
+      domain: binary_sensor
+  condition: []
+  action:
+    - type: turn_on
+      device_id: 66b978512a8e1817e288767f6033ab22
+      entity_id: light.wled_2
+      domain: light
+      brightness_pct: 100
+    - delay: "60"
+    - type: turn_off
+      device_id: 66b978512a8e1817e288767f6033ab22
+      entity_id: light.wled_2
+      domain: light
+  mode: restart

@@ -1,0 +1,43 @@
+badges: []
+icon: "mdi:bike"
+path: ""
+title: Stromer
+cards:
+  - default_zoom: 15
+    entities:
+      - entity: sensor.stromer_geocoded_location
+    hours_to_show: 72
+    type: map
+  - entities:
+      - entity: sensor.stromer_battery
+        name: Batterij
+    type: "custom:mini-graph-card"
+  - entities:
+      - entity: sensor.stromer_battery_temperatuur
+        name: Batterij
+      - entity: sensor.stromer_motor_temp
+        name: Motor
+    name: Temperaturen
+    type: "custom:mini-graph-card"
+  - entity: sensor.stromer_current_speed
+    max: 100
+    min: 0
+    name: Huidige snelheid
+    type: gauge
+  - entity: sensor.stromer_avg_speed
+    max: 100
+    min: 0
+    type: gauge
+  - entities:
+      - sensor.stromer_energy_consumption_total
+    hours_to_show: 24
+    refresh_interval: 0
+    type: history-graph
+  - entities:
+      - entity: sensor.stromer_km_total
+        name: Totaal
+      - entity: sensor.stromer_sw_version
+        name: Versie
+      - entity: sensor.stromer_lock_state
+        name: Slot
+    type: glance

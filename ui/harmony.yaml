@@ -1,0 +1,12 @@
+icon: "mdi:remote"
+path: harmony
+title: Harmony
+badges: []
+cards:
+  - entities:
+      - entity: switch.apple_tv
+      - entity: switch.switch
+      - entity: switch.xbox
+      - entity: switch.android
+    title: Afstandsbediening
+    type: entities

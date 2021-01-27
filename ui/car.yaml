@@ -1,0 +1,43 @@
+badges: []
+icon: "mdi:car"
+path: touran
+title: Touran
+cards:
+  - dark_mode: false
+    default_zoom: 13
+    entities:
+      - entity: device_tracker.touran
+    hours_to_show: 72
+    type: map
+  - entity: sensor.touran_fuel_level
+    graph: line
+    hours_to_show: 168
+    type: sensor
+  - entity: sensor.touran_last_trip_length
+    graph: line
+    hours_to_show: 168
+    type: sensor
+  - entity: sensor.wvgzzz1tzkw065161_odometer
+    graph: line
+    hours_to_show: 168
+    type: sensor
+  - entities:
+      - entity: binary_sensor.touran_parking_light
+      - entity: binary_sensor.touran_window_closed_left_front
+      - entity: binary_sensor.touran_window_closed_right_front
+      - entity: binary_sensor.touran_window_closed_left_back
+      - entity: binary_sensor.touran_window_closed_right_back
+      - entity: binary_sensor.wvgzzz1tzkw065161_doors_locked
+      - entity: binary_sensor.wvgzzz1tzkw065161_trunk_locked
+      - entity: device_tracker.touran
+      - entity: sensor.touran_combined_range
+      - entity: sensor.wvgzzz1tzkw065161_oil_inspection
+      - entity: sensor.wvgzzz1tzkw065161_service_inspection
+      - entity: sensor.wvgzzz1tzkw065161_odometer
+      - entity: sensor.touran_last_trip_length
+      - entity: sensor.touran_last_trip_duration
+      - entity: sensor.touran_last_trip_average_speed
+      - entity: sensor.touran_last_trip_average_fuel_consumption
+      - entity: binary_sensor.touran_sunroof_closed
+    title: Stats
+    type: entities

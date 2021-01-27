@@ -1,0 +1,17 @@
+.cloud
+.storage
+appdaemon
+custom_components
+deps
+esphome
+netdaemon
+themes
+tts
+www
+secrets.yaml
+home-assistant.log
+home-assistant_v2.db
+*.crt
+*.key
+/known_devices.yaml
+/harmony_12962452.conf

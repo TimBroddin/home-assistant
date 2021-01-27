@@ -1,0 +1,123 @@
+- id: '1596629397251'
+  name: TV Gezellig
+  entities:
+    light.bloom:
+      brightness: 99
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Bloom
+      hs_color:
+      - 299.211
+      - 59.608
+      rgb_color:
+      - 253
+      - 102
+      - 255
+      state: 'on'
+      supported_features: 61
+      xy_color:
+      - 0.372
+      - 0.185
+    light.bol:
+      brightness: 81
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Bol
+      hs_color:
+      - 270.824
+      - 100
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 131
+      - 0
+      - 255
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.222
+      - 0.079
+    light.lightstrips_1:
+      brightness: 255
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: LightStrips 1
+      hs_color:
+      - 221.463
+      - 96.471
+      rgb_color:
+      - 8
+      - 85
+      - 255
+      state: 'on'
+      supported_features: 61
+      xy_color:
+      - 0.139
+      - 0.085
+    light.livingcolor:
+      brightness: 185
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Livingcolor
+      hs_color:
+      - 359.667
+      - 70.588
+      rgb_color:
+      - 255
+      - 75
+      - 75
+      state: 'on'
+      supported_features: 61
+      xy_color:
+      - 0.627
+      - 0.305
+    light.muur:
+      brightness: 255
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Muur
+      hs_color:
+      - 270.824
+      - 100
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 131
+      - 0
+      - 255
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.222
+      - 0.079
+    light.raam:
+      brightness: 214
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Raam
+      hs_color:
+      - 16.471
+      - 100
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 255
+      - 70
+      - 0
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.672
+      - 0.324
