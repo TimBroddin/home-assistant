@@ -50,4 +50,4 @@ home_connect:
 
 eufy:
   username: !secret eufy_username
-  password: !sectret eufy_password
+  password: !secret eufy_password

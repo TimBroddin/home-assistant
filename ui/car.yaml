@@ -1,4 +1,18 @@
-badges: []
+badges:
+  - entity: sensor.wvgzzz1tzkw065161_odometer
+    name: Km-stand
+  - entity: sensor.touran_fuel_level
+    name: Benzine
+  - entity: sensor.touran_combustion_range
+    name: Bereik
+  - entity: sensor.touran_last_trip_average_fuel_consumption
+    name: Laatste verbruik
+  - entity: binary_sensor.wvgzzz1tzkw065161_doors_locked
+    name: Deuren
+  - entity: binary_sensor.wvgzzz1tzkw065161_trunk_locked
+    name: Koffer
+  - entity: binary_sensor.touran_sunroof_closed
+    name: Dak
 icon: "mdi:car"
 path: touran
 title: Touran

@@ -1,0 +1,36 @@
+title: Synology
+path: synology
+icon: "mdi:harddisk"
+badges:
+  - entity: binary_sensor.synology_security_status
+  - entity: binary_sensor.synology_update_available
+  - entity: sensor.synology_drive_1_status
+  - entity: sensor.synology_drive_2_status
+  - entity: sensor.synology_drive_3_status
+  - entity: sensor.synology_drive_4_status
+cards:
+  - type: "custom:layout-card"
+    layout: vertical
+    cards:
+      - type: glance
+        entities:
+          - entity: sensor.synology_volume_1_volume_used
+            name: "% vol"
+          - entity: sensor.synology_volume_1_used_space
+            name: "Gebruik"
+          - entity: sensor.synology_network_down
+            name: "In"
+          - entity: sensor.synology_network_up
+            name: "Uit"
+      - type: "custom:mini-graph-card"
+        entities:
+          - sensor.synology_cpu_load_5_min
+        graph: line
+      - type: "custom:mini-graph-card"
+        entities:
+          - sensor.synology_memory_available_real
+        graph: line
+      - type: "custom:mini-graph-card"
+        entities:
+          - sensor.synology_temperature
+        graph: line

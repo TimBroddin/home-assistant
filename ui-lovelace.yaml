@@ -1,6 +1,8 @@
+theme: kibibit
 views:
   - !include ui/temperatures.yaml
   - !include ui/light.yaml
+  - !include ui/synology.yaml
   - !include ui/harmony.yaml
   - !include ui/car.yaml
   - !include ui/bike.yaml

@@ -1,4 +1,10 @@
-badges: []
+badges:
+  - entity: sensor.stromer_km_total
+    name: Totaal
+  - entity: sensor.stromer_sw_version
+    name: Versie
+  - entity: sensor.stromer_lock_state
+    name: Slot
 icon: "mdi:bike"
 path: ""
 title: Stromer
@@ -33,11 +39,3 @@ cards:
     hours_to_show: 24
     refresh_interval: 0
     type: history-graph
-  - entities:
-      - entity: sensor.stromer_km_total
-        name: Totaal
-      - entity: sensor.stromer_sw_version
-        name: Versie
-      - entity: sensor.stromer_lock_state
-        name: Slot
-    type: glance
