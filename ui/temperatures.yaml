@@ -14,22 +14,6 @@ cards:
           - entity: weather.huis
             name: Weer
             type: weather-forecast
-          - type: horizontal-stack
-            title: Systeem
-            cards:
-              - type: gauge
-                entity: sensor.processor_use_percent
-                min: 0
-                max: 100
-                name: "CPU %"
-              - type: "custom:mini-graph-card"
-                entities:
-                  - sensor.disk_free_home
-                name: SD-kaart
-              - type: "custom:mini-graph-card"
-                entities:
-                  - sensor.memory_free
-                name: Geheugen vrij
       - type: vertical-stack
         title: Gang
         cards:

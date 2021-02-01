@@ -23,15 +23,7 @@ cards:
       - entity: device_tracker.touran
     hours_to_show: 72
     type: map
-  - entity: sensor.touran_fuel_level
-    graph: line
-    hours_to_show: 168
-    type: sensor
   - entity: sensor.touran_last_trip_length
-    graph: line
-    hours_to_show: 168
-    type: sensor
-  - entity: sensor.wvgzzz1tzkw065161_odometer
     graph: line
     hours_to_show: 168
     type: sensor

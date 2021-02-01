@@ -2,6 +2,7 @@ theme: kibibit
 views:
   - !include ui/temperatures.yaml
   - !include ui/light.yaml
+  - !include ui/system.yaml
   - !include ui/synology.yaml
   - !include ui/harmony.yaml
   - !include ui/car.yaml
